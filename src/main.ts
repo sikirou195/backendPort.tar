@@ -9,10 +9,10 @@ async function bootstrap() {
 
   // ✅ Autorise CORS en fonction de l'environnement
   app.enableCors({
-    origin: [
-      'http://localhost:8080', // utile en dev
-      'https://ton-portfolio.vercel.app', // frontend en ligne sur Vercel
-    ],
+    origin:
+      process.env.NODE_ENV === 'production'
+        ? ['https://ton-portfolio.vercel.app']
+        : ['http://localhost:8080'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   });
 
