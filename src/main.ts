@@ -7,13 +7,15 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
 
-  // ✅ Autorise CORS pour le frontend
+  // ✅ Autorise CORS en fonction de l'environnement
   app.enableCors({
-    origin: 'http://localhost:8080', // ou '*' pour tout accepter (en dev seulement)
+    origin: [
+      'http://localhost:8080', // utile en dev
+      'https://ton-portfolio.vercel.app', // frontend en ligne sur Vercel
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   });
 
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
-// import { NestFactory } from '@nestjs/core';
