@@ -7,12 +7,11 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
 
+  // ✅ Configuration CORS corrigée
   app.enableCors({
-    origin:
-      process.env.NODE_ENV === 'production'
-        ? ['https://frontend-port-rho.vercel.app'] // corrige avec le vrai domaine
-        : ['http://localhost:8080'],
+    origin: 'https://frontend-port-rho.vercel.app', // domaine Vercel autorisé
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true, // utile si tu utilises des cookies ou des headers d’auth
   });
 
   const port = process.env.PORT || 3000;
