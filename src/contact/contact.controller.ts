@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
 import { ContactService } from './contact.service';
 import { CreateContactDto } from './dto/create-contact.dto'; // Assure-toi que le chemin est correct
 
-@Controller('contact')
+@Controller('portofolio')
 export class ContactController {
   constructor(private readonly contactService: ContactService) {}
 
