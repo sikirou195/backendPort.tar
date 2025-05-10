@@ -7,15 +7,16 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
 
-  // ✅ Autorise CORS en fonction de l'environnement
   app.enableCors({
     origin:
       process.env.NODE_ENV === 'production'
-        ? ['https://ton-portfolio.vercel.app']
+        ? ['https://frontend-port-rho.vercel.app'] // corrige avec le vrai domaine
         : ['http://localhost:8080'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   });
 
-  await app.listen(process.env.PORT || 3000);
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
+  console.log(`🚀 Server is running on http://localhost:${port}`);
 }
 bootstrap();
