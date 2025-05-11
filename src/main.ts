@@ -8,11 +8,12 @@ async function bootstrap() {
   // Configuration CORS complète
   app.enableCors({
     origin: [
-      'https://votre-app-frontend.vercel.app', // Remplacez par votre domaine Vercel exact
+      'https://frontend-port-rho.vercel.app', // Ajoutez cette URL qui correspond à l'erreur
+      'https://votre-app-frontend.vercel.app',
       'http://localhost:3000',
       'http://localhost:5173',
       'http://localhost:8080',
-      'https://portofolio-moutosikirou.vercel.app', // Si c'est votre URL Vercel
+      'https://portofolio-moutosikirou.vercel.app',
       // Temporairement, vous pouvez autoriser toutes les origines pour tester
       // '*'
     ],
