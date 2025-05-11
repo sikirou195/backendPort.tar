@@ -11,8 +11,9 @@ model Contact {
   id       Int    @id @default(autoincrement())
   name     String
   email    String
+   sujet    String
   message  String
-
-  @@map("portofolio") // 👉 Dit à Prisma que cette table s'appelle "portofolio" dans la DB
+ createdAt DateTime @default(now())
+  @@map("portefeuille") // 👉 Dit à Prisma que cette table s'appelle "portofolio" dans la DB
 }
 

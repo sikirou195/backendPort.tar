@@ -6,6 +6,9 @@ const prisma = new PrismaClient();
 
 @Injectable()
 export class ContactService {
+  save(dto: CreateContactDto) {
+    throw new Error('Method not implemented.');
+  }
   async create(data: CreateContactDto) {
     return await prisma.contact.create({ data });
   }

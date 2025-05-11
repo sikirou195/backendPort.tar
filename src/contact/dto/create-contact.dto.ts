@@ -2,7 +2,7 @@ import { IsString, IsEmail } from 'class-validator';
 
 export class CreateContactDto {
   @IsString()
-  nom: string;
+  name: string;
 
   @IsEmail()
   email: string;
