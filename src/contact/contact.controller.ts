@@ -1,14 +1,14 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Delete } from '@nestjs/common';
 import { ContactService } from './contact.service';
-import { CreateContactDto } from './dto/create-contact.dto'; // Assure-toi que le chemin est correct
+import { CreateContactDto } from './dto/create-contact.dto';
 
-@Controller('portofolio')
+@Controller('portofolio') // le même nom que dans tes routes frontend
 export class ContactController {
   constructor(private readonly contactService: ContactService) {}
 
   @Post()
-  async create(@Body() createContactDto: CreateContactDto) {
-    return this.contactService.create(createContactDto);
+  create(@Body() dto: CreateContactDto) {
+    return this.contactService.create(dto);
   }
 
   @Get()
