@@ -6,6 +6,7 @@ const prisma = new PrismaClient();
 
 @Injectable()
 export class ContactService {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   save(dto: CreateContactDto) {
     throw new Error('Method not implemented.');
   }
