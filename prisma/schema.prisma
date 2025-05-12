@@ -14,6 +14,6 @@ model Contact {
    sujet    String
   message  String
  createdAt DateTime @default(now())
-  @@map("portefeuille") // 👉 Dit à Prisma que cette table s'appelle "portofolio" dans la DB
+  @@map("portefeuille") // 👉 Dit à Prisma que cette table s'appelle "portfeuile" dans la DB
 }
 
