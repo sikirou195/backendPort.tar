@@ -15,7 +15,7 @@ async function bootstrap() {
       'http://localhost:8080',
       'https://portofolio-moutosikirou.vercel.app',
       // Temporairement, vous pouvez autoriser toutes les origines pour tester
-      // '*'
+      '*',
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization',
